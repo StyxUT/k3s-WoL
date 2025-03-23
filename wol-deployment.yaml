@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wol
+  labels:
+    app: wol
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wol 
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wol 
+    spec:
+      containers:
+      - name: wol 
+        image: styxut/wol:latest  
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 8880
+          name: "tcp-port" 
+          protocol: TCP
