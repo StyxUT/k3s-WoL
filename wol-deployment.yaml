@@ -17,10 +17,11 @@ spec:
       labels:
         app: wol 
     spec:
+      hostNetwork: true
       containers:
       - name: wol 
         image: styxut/wol:latest  
-        imagePullPolicy: "IfNotPresent"
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 8880
           name: "tcp-port" 

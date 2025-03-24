@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: wol 
 spec:
-  type: NodePort 
+  #type: NodePort 
   selector:
     app: wol 
   ports: 
